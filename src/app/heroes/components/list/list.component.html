@@ -1,0 +1,27 @@
+<h3>Listado de Héroes</h3>
+
+<!-- <div> es un agrupador en html -->
+<div *ngIf="deletedHero; else nothingWasDeleted"> <!-- "nothingWasDeleted" es el nombre del ng-template que quiero mostrar en el else -->
+  <h3>Héroe borrado <small class="text-danger">{{deletedHero}}</small></h3> <!-- <small> nos sirve para usar una clase de Bootrastap -->
+</div>
+
+<!-- <ng-template> es un componente de Angular. Es como un <div> que no existe -->
+<ng-template #nothingWasDeleted> <!-- #nothingWasDeleted es una referencia local -->
+  <h3>No ha borrado nada.</h3>
+</ng-template>
+
+<button
+  *ngIf="heroNames.length > 0"
+  (click)="removeLastHero()"
+  class="btn btn-outline-danger">
+  Borrar último héroe
+</button>
+
+<ul class="mt-2 list-group"> <!-- Unorder List -->
+  <li *ngFor="let name of heroNames"
+      class="list-group-item">
+      {{name}}
+  </li> <!-- List Item -->
+  <!-- Itero el heroNames de la clase list.component.ts e imprimo su nombre -->
+  <!-- El class de <ul> y <li> son clases css de Bootstrap -->
+</ul>

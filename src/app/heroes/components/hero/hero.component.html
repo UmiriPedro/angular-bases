@@ -1,0 +1,38 @@
+<h1>{{name}}</h1>
+
+<dl> <!-- Definition List -->
+  <td>Nombre:</td><!-- Table Description -->
+  <dd> {{name}} </dd> <!-- Descripción -->
+
+  <td>Edad:</td><!-- Table Description -->
+  <dd> {{age}} </dd> <!-- Descripción -->
+
+  <td>Método:</td><!-- Table Description -->
+  <dd> {{getHeroDescription()}} </dd> <!-- Descripción -->
+
+  <td>Capitalizado:</td><!-- Table Description -->
+  <dd> {{capitalizeName}} </dd> <!-- Descripción -->
+</dl>
+
+<button
+  *ngIf="name !== 'Spiderman'"
+  (click)="changeHero()"
+  class="btn btn-primary mx-2">
+  <!-- class="btn btn-primary" es una clase de bootstrap -->
+  <!-- Con "mx-2" le doy un márgen en el eje x de 2 para que los botónes no estén juntos -->
+  Cambiar nombre
+</button>
+
+<button
+  *ngIf="age !== 25"
+  (click)="changeAge()"
+  class="btn btn-primary">
+  Cambiar edad
+</button>
+
+<button
+  *ngIf="name !== 'ironman' || age !== 45"
+  (click)="resetForm()"
+  class="btn btn-primary mx-2">
+  Reset
+</button>
