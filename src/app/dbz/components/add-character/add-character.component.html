@@ -1,0 +1,28 @@
+<h4>Agregar personaje</h4>
+
+<!-- <form> representa un formulario -->
+<!-- con "row" me agrupa cada elemento en una fila distinta -->
+<!-- (ngSubmit) es un evento especial de Angular que ayuda con la propagación del formulario para evitar que se recargue el navegador web -->
+  <form class="row" (ngSubmit)="emitCharacter()">
+
+  <!-- input de texto -->
+  <input type="text"
+  [(ngModel)]="character.name"
+  name="name"
+  class="form-control mb-2"
+  placeholder="Nombre">
+
+  <!-- input numérico -->
+  <input type="number"
+  [(ngModel)]="character.power"
+  name="power"
+  class="form-control mb-2"
+  placeholder="Poder">
+
+  <!-- type="submit" es para enviar -->
+  <button type="submit" class="btn btn-primary">
+    Agregar
+  </button>
+
+  <!-- <pre>{{ character | json }}</pre> -->
+</form>

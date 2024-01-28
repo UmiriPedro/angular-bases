@@ -1,0 +1,20 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<!-- <div> que representa una fila -->
+<div class="row">
+  <!-- <div> que representa una columna -->
+  <div class="col"> <!-- "col" es una clase de Boostrap -->
+    <!-- con [characterList]="characters", le estoy enviando el characters que tengo en el servicio  -->
+    <dbz-list [characterList]="characters"
+              (onDelete)="onDeleteCharacter($event)"></dbz-list>
+
+    <!-- onDelete -->
+  </div>
+
+  <!-- <div> que representa la segunda columna -->
+  <div class="col">
+    <!-- Le estoy indicando que cuando se ejecute el evento onNewCharacter, ejecute el método onNewCharacter y que le envíe el character -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+</div>
